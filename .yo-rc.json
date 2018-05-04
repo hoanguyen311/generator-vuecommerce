@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Harry Nguyen",
+      "authorEmail": "thaihoa311@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}
