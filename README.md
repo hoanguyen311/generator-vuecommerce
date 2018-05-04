@@ -1,19 +1,19 @@
-# generator-vuecomerce [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-vuecommerce [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > generate an application using Vue, Vuex for ecomerce website
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-vuecomerce using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-vuecommerce using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
-npm install -g generator-vuecomerce
+npm install -g generator-vuecommerce
 ```
 
 Then generate your new project:
 
 ```bash
-yo vuecomerce
+yo vuecommerce
 ```
 
 ## Getting To Know Yeoman
@@ -28,9 +28,9 @@ yo vuecomerce
 MIT © [Harry Nguyen]()
 
 
-[npm-image]: https://badge.fury.io/js/generator-vuecomerce.svg
-[npm-url]: https://npmjs.org/package/generator-vuecomerce
-[travis-image]: https://travis-ci.org/hoanguyen311/generator-vuecomerce.svg?branch=master
-[travis-url]: https://travis-ci.org/hoanguyen311/generator-vuecomerce
-[daviddm-image]: https://david-dm.org/hoanguyen311/generator-vuecomerce.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/hoanguyen311/generator-vuecomerce
+[npm-image]: https://badge.fury.io/js/generator-vuecommerce.svg
+[npm-url]: https://www.npmjs.com/package/generator-vuecommerce
+[travis-image]: https://travis-ci.org/hoanguyen311/generator-vuecommerce.svg?branch=master
+[travis-url]: https://travis-ci.org/hoanguyen311/generator-vuecommerce
+[daviddm-image]: https://david-dm.org/hoanguyen311/generator-vuecommerce.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/hoanguyen311/generator-vuecommerce
