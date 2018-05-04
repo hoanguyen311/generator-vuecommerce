@@ -1,7 +1,7 @@
 {
   "name": "generator-vuecommerce",
   "version": "0.0.0",
-  "description": "generate an application using Vue, Vuex for ecomerce website",
+  "description": "Generate an application using Vue, Vuex for ecomerce website",
   "homepage": "",
   "author": {
     "name": "Harry Nguyen",
