@@ -9,6 +9,7 @@
       class="lazy-image__place"
       :style="styles">
       <img
+        v-on:load="onLoad"
         class="lazy-image__img"
         :src="loaded ? src : null"
         :alt="alt">
@@ -50,6 +51,10 @@
     props: {
       src: String,
       alt: String,
+      forceUsingRatioProp: {
+        type: Boolean,
+        default: false
+      },
       ratio: {
         type: Number,
         default: 1
@@ -81,18 +86,17 @@
     methods: {
       load() {
         const image = new Image();
-        image.onerror = this.onError();
-        image.onload = this.onLoad({ target: image });
+        image.onerror = this.onError;
+        image.onload = () => this.loaded = true;
         image.src = this.src;
       },
       onError() {
         this.error = true;
       },
       onLoad({ target }) {
-        this.loaded = true;
         const naturalRatio = target.naturalWidth / target.naturalHeight;
 
-        if (naturalRatio !== this.ratio) {
+        if (naturalRatio !== this.ratio && !this.forceUsingRatioProp) {
           this.naturalRatio = naturalRatio;
         }
       }
