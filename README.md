@@ -1,5 +1,5 @@
-# generator-vuecommerce [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> generate an application using Vue, Vuex for ecomerce website
+# generator-vuecommerce [![NPM version][npm-image]][npm-url]
+> [Yeoman](http://yeoman.io) generator that scaffolds out a Vue E-commerce website using [Webpack](https://webpack.js.org/) for the build process
 
 ## Installation
 
@@ -16,12 +16,18 @@ Then generate your new project:
 yo vuecommerce
 ```
 
-## Getting To Know Yeoman
+## Frameworks and Libraries:
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+ * [Vue](https://vuejs.org/)
+ * [Vuex](https://vuex.vuejs.org/en/)
+ * [Bootstrap](https://getbootstrap.com/)
+ * etc.
+
+## Toolkit:
+ * [Webpack](https://webpack.js.org/)
+ * [Babel](https://babeljs.io/docs/usage/babel-register/)
+ * [Sass](https://sass-lang.com/)
+ * etc.
 
 ## License
 
@@ -30,7 +36,3 @@ MIT © [Harry Nguyen]()
 
 [npm-image]: https://badge.fury.io/js/generator-vuecommerce.svg
 [npm-url]: https://www.npmjs.com/package/generator-vuecommerce
-[travis-image]: https://travis-ci.org/hoanguyen311/generator-vuecommerce.svg?branch=master
-[travis-url]: https://travis-ci.org/hoanguyen311/generator-vuecommerce
-[daviddm-image]: https://david-dm.org/hoanguyen311/generator-vuecommerce.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/hoanguyen311/generator-vuecommerce

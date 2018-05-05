@@ -1,17 +1,21 @@
-## SIEUBANHANG
+## VUECOMMERCE
 
-Frontend part for sieubanhang website using Vue and Vuex
+A super E-Commerce website using generator-vuecommerce to generate skeleton
 
 ### Installation
 
-Install yarn https://yarnpkg.com/en/docs/install#mac-stable
+#### Install yarn
+
+https://yarnpkg.com/en/docs/install#mac-stable
+
+#### Install dependencies
 
 `yarn install`
 
-### Development
+### Start development
 
 `yarn start`
 
-### Production
+### Make production build
 
 `yarn build`
