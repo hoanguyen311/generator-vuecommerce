@@ -1,10 +1,12 @@
 import { VueLoaderPlugin } from 'vue-loader';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import glob from 'glob';
 
 import packageConfig from '../package.json';
 import path from 'path';
 
 const root = path.resolve(__dirname, '..');
+
 
 export const PATHS = {
   root,
@@ -13,11 +15,37 @@ export const PATHS = {
   assets: path.resolve(root, 'assets')
 };
 
+const entry = glob
+  .sync('**/pages/*', { cwd: PATHS.src })
+  .reduce((entries, page) => ({
+    ...entries,
+    [page.toLowerCase()]: ['babel-polyfill', `./${page}/index.js`]
+  }), {});
+
+const htmls = Object.keys(entry).map(page => (
+  new HtmlWebpackPlugin({
+    title: `${packageConfig.name} - ${page}`,
+    template: path.resolve(PATHS.assets, 'page-template.html'),
+    inject: false,
+    filename: `${page}/index.html`
+  })
+));
+
+htmls.push(new HtmlWebpackPlugin({
+  title: packageConfig.name,
+  template: path.resolve(PATHS.assets, 'index.html'),
+  filename: 'index.html',
+  inject: false,
+  description: packageConfig.description,
+  entry
+}));
+
 export default {
-  entry: ['babel-polyfill', path.resolve(PATHS.src, 'index.js')],
+  context: PATHS.src,
+  entry,
   output: {
     path: PATHS.build,
-    filename: 'index.js'
+    filename: '[name]/index.js'
   },
   resolve: {
     alias: {
@@ -63,11 +91,7 @@ export default {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: packageConfig.name,
-      template: path.resolve(PATHS.assets, 'index.html'),
-      inject: false
-    }),
+    ...htmls,
     new VueLoaderPlugin()
   ]
 };

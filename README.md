@@ -16,6 +16,12 @@ Then generate your new project:
 yo vuecommerce
 ```
 
+Generate a new page
+
+```bash
+yo vuecommerce:page -n <page name>
+```
+
 ## Frameworks and Libraries:
 
  * [Vue](https://vuejs.org/)

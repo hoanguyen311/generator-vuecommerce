@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <% for (var css in htmlWebpackPlugin.files.css) { %>
+  <link async href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+  <% } %>
+</head>
+<body>
+  <div id="container"></div>
+  <script>
+    window.__sellers__ = [{
+      url: 'https://www.lazada.vn/shop/site/api/seller/products?sellerId=100101649&shopId=119684&lang=vi&limit=12&sort=reviews%27',
+      name: 'Seller A',
+      id: 1,
+    }, {
+      url: 'https://www.lazada.vn/shop/site/api/seller/products?sellerId=1212&shopId=6243&lang=en&limit=12&sort=reviews',
+      name: 'Seller B',
+      id: 2,
+    }, {
+      url: 'https://www.lazada.vn/shop/site/api/seller/products?sellerId=100007855&shopId=3400&lang=en&limit=12&sort=reviews',
+      name: 'Seller C',
+      id: 3,
+    }, {
+      url: 'https://www.lazada.vn/shop/site/api/seller/products?shopId=7410&sellerId=100100682&lang=en&limit=5&sort=created_at',
+      name: 'Seller D',
+      id: 5,
+    }, {
+      id: 6,
+      url: 'https://www.lazada.vn/shop/site/api/seller/products?sellerId=100015588&shopId=3618&lang=en&limit=12&sort=reviews',
+      name: 'Seller E'
+    }, {
+      id: 7,
+      url: 'https://www.lazada.vn/shop/site/api/seller/products?sellerId=5298&shopId=253&lang=en&limit=12&sort=reviews',
+      name: 'Seller F'
+    }];
+  </script>
+  <% for (var js in htmlWebpackPlugin.files.js) { %>
+    <script async src="<%= htmlWebpackPlugin.files.js[js] %>" ></script>
+    <% } %>
+</body>
+</html>

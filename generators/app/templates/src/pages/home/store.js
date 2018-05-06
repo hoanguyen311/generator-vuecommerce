@@ -7,4 +7,4 @@ export default new Vuex.Store({
   state: {
     text: 'Hello, how are you?'
   }
-})
+});

@@ -38,7 +38,7 @@ class LazinessManager {
       if (inViewport(instance.$el)) {
         instance.load && instance.load();
       }
-    })
+    });
   }
 }
 

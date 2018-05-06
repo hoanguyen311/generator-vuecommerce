@@ -37,7 +37,7 @@ export default {
   plugins: [
     ...common.plugins,
     new MiniCssExtractPlugin({
-      filename: 'index.css'
+      filename: '[name]/index.css'
     })
   ]
 };
