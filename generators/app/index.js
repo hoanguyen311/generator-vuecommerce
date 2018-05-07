@@ -78,6 +78,6 @@ module.exports = class extends Generator {
   }
 
   end() {
-    this.log(`🍾 We're done, now you can start development by typing ${chalk.green('yarn start')}`);
+    this.log(`🍾  We're done, now you can start development by typing ${chalk.green('yarn start')}`);
   }
 };

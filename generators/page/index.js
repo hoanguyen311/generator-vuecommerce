@@ -1,5 +1,5 @@
 const Generator = require('yeoman-generator');
-const utils = require('../../utils');
+const utils = require('../utils');
 
 module.exports = class extends Generator {
 
