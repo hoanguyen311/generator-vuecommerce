@@ -24,7 +24,7 @@ const entry = glob
 
 const htmls = Object.keys(entry).map(page => (
   new HtmlWebpackPlugin({
-    title: `${packageConfig.name} - ${page}`,
+    title: `${page} - ${packageConfig.name}`,
     template: path.resolve(PATHS.assets, 'page-template.html'),
     inject: false,
     filename: `${page}/index.html`
