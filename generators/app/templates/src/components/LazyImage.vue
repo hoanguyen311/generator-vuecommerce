@@ -62,7 +62,7 @@
       background: String,
       extraStyle: {
         type: Object,
-        default: {}
+        default: () => {}
       }
     },
     computed: {
