@@ -6,6 +6,7 @@ const glob = require('globby');
 const path = require('path');
 
 module.exports = class extends Generator {
+
   prompting() {
     // Have Yeoman greet the user.
     this.log(
@@ -16,7 +17,7 @@ module.exports = class extends Generator {
       {
         type: 'input',
         name: 'name',
-        message: 'What is your application name?',
+        message: 'What is your application\'s name?',
         default: this.appname
       },
       {
@@ -28,7 +29,7 @@ module.exports = class extends Generator {
       {
         type: 'input',
         name: 'author',
-        message: 'Who is the author?',
+        message: 'Author?',
         default: this.user.git.name
       }
     ];
@@ -73,9 +74,10 @@ module.exports = class extends Generator {
 
   install() {
     this.yarnInstall();
+    this.config.save()
   }
 
   end() {
-    this.log(chalk.green('We\'re done, now you can start development by typing yarn start'));
+    this.log(`🍾 We're done, now you can start development by typing ${chalk.green('yarn start')}`);
   }
 };
