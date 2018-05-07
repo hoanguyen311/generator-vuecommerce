@@ -1,6 +1,5 @@
-import common, { PATHS } from './common';
 import FallbackPort from 'fallback-port';
-
+import common, { getHtmls } from './common';
 const defaultPort = 9000;
 const fallbackPort = new FallbackPort(defaultPort);
 const otherPort = fallbackPort.getPort();
@@ -62,9 +61,15 @@ export default {
       }
     ]
   },
-  
+
+  plugins: [
+    ...common.plugins,
+    ...getHtmls(true)
+  ],
+
   devServer: {
     port,
     stats: "minimal",
   }
 };
+

@@ -1,5 +1,5 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import common from './common';
+import common, { getHtmls } from './common';
 
 export default {
   ...common,
@@ -36,6 +36,7 @@ export default {
   },
   plugins: [
     ...common.plugins,
+    ...getHtmls(),
     new MiniCssExtractPlugin({
       filename: '[name]/index.css'
     })

@@ -1,9 +1,8 @@
-import { VueLoaderPlugin } from 'vue-loader';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { VueLoaderPlugin } from 'vue-loader';
 import glob from 'glob';
-
-import packageConfig from '../package.json';
 import path from 'path';
+import packageConfig from '../package.json';
 
 const root = path.resolve(__dirname, '..');
 
@@ -22,23 +21,29 @@ const entry = glob
     [page.toLowerCase()]: ['babel-polyfill', `./${page}/index.js`]
   }), {});
 
-const htmls = Object.keys(entry).map(page => (
-  new HtmlWebpackPlugin({
-    title: `${page} - ${packageConfig.name}`,
-    template: path.resolve(PATHS.assets, 'page-template.html'),
-    inject: false,
-    filename: `${page}/index.html`
-  })
-));
+export function getHtmls(isDev = false) {
+  const htmls = Object.keys(entry).map(page => (
+    new HtmlWebpackPlugin({
+      title: `${page} - ${packageConfig.name}`,
+      template: path.resolve(PATHS.assets, 'page-template.html'),
+      inject: false,
+      filename: `${page}/index.html`,
+      isDev,
+      isProd: !isDev
+    })
+  ));
 
-htmls.push(new HtmlWebpackPlugin({
-  title: packageConfig.name,
-  template: path.resolve(PATHS.assets, 'index.html'),
-  filename: 'index.html',
-  inject: false,
-  description: packageConfig.description,
-  entry
-}));
+  htmls.push(new HtmlWebpackPlugin({
+    title: packageConfig.name,
+    template: path.resolve(PATHS.assets, 'index.html'),
+    filename: 'index.html',
+    inject: false,
+    description: packageConfig.description,
+    entry
+  }));
+
+  return htmls;
+}
 
 export default {
   context: PATHS.src,
@@ -91,7 +96,6 @@ export default {
     ]
   },
   plugins: [
-    ...htmls,
     new VueLoaderPlugin()
   ]
 };
