@@ -33,7 +33,7 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath('page'),
-      this.destinationPath(`src/pages/${names.fileName}`),
+      this.destinationPath(`src/pages/${names.className}`),
       names
     );
 
