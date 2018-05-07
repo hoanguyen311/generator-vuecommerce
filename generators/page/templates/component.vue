@@ -1,11 +1,19 @@
 <template>
-  <div class="<%= name %>">
-    {{ name }}
+  <div class=".<%= cssClassName %>">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">{{ name }}</h1>
+        <p class="lead">Component: <code>./src/components/<%= className %>.vue</code></p>
+        <p class="lead">Page: <code>./src/pages/<%= className %>/index.js</code></p>
+      </div>
+    </div>
   </div>
 </template>
-<style>
+<style lang="scss">
+@import "bootstrap/scss/bootstrap.scss";
+
 .<%= cssClassName %> {
-  width: 300px;
+  /* styles */
 }
 </style>
 <script>
@@ -19,3 +27,4 @@ export default {
   }
 }
 </script>
+
