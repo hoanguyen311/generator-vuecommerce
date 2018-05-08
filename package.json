@@ -40,7 +40,7 @@
   },
   "scripts": {
     "prepublishOnly": "nsp check",
-    "pretest": "eslint . --debug",
+    "pretest": "eslint .",
     "precommit": "lint-staged",
     "test": "jest"
   },
