@@ -20,8 +20,11 @@ module.exports = {
       fileName: name,
       varName: camelTrans(name),
       className: camelTrans(name, true),
-      constName: name.split('-').join('').toUpperCase(),
+      constName: name
+        .split('-')
+        .join('')
+        .toUpperCase(),
       cssClassName: _.kebabCase(name)
     };
   }
-}
+};
