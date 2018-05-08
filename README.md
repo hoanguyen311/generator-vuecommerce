@@ -1,4 +1,4 @@
-# generator-vuecommerce [![NPM version][npm-image]][npm-url][![Build Status](https://travis-ci.org/hoanguyen311/generator-vuecommerce.svg?branch=master)](https://travis-ci.org/hoanguyen311/generator-vuecommerce)
+# generator-vuecommerce [![NPM version][npm-image]][npm-url] [![Build Status](https://travis-ci.org/hoanguyen311/generator-vuecommerce.svg?branch=master)](https://travis-ci.org/hoanguyen311/generator-vuecommerce)
 > [Yeoman](http://yeoman.io) generator that scaffolds out a Vue E-commerce website using [Webpack](https://webpack.js.org/) for the build process
 
 ## Installation
