@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "xo",
+    "prettier",
+    "eslint:recommended"
+  ],
+  "env": {
+    "jest": true,
+    "node": true
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "printWidth": 90
+      }
+    ]
+  },
+  "plugins": [
+    "prettier"
+  ]
+}

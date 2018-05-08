@@ -6,25 +6,22 @@ const glob = require('globby');
 const path = require('path');
 
 module.exports = class extends Generator {
-
   prompting() {
     // Have Yeoman greet the user.
-    this.log(
-      yosay(`Welcome to ${chalk.red('generator-vuecomerce')} generator!`)
-    );
+    this.log(yosay(`Welcome to ${chalk.red('generator-vuecomerce')} generator!`));
 
     const prompts = [
       {
         type: 'input',
         name: 'name',
-        message: 'What is your application\'s name?',
+        message: "What is your application's name?",
         default: this.appname
       },
       {
         type: 'input',
         name: 'description',
         message: 'How do you describe your application?',
-        default: ""
+        default: ''
       },
       {
         type: 'input',
@@ -46,24 +43,21 @@ module.exports = class extends Generator {
   }
 
   _writeFolders() {
-    ['assets', 'src', 'webpack'].forEach((folder) => {
-      this.fs.copy(
-        this.templatePath(folder),
-        this.destinationPath(folder)
-      );
+    ['assets', 'src', 'webpack'].forEach(folder => {
+      this.fs.copy(this.templatePath(folder), this.destinationPath(folder));
     });
   }
 
   _writeRootFiles() {
-    glob.sync(
-      [this.templatePath('*'), this.templatePath('_package.json')]
-    ).forEach(file => {
-      this.log('copy', file);
-      this.fs.copy(
-        this.templatePath(file),
-        this.destinationPath(path.basename(file).replace(/^_/, ''))
-      );
-    });
+    glob
+      .sync([this.templatePath('*'), this.templatePath('_package.json')])
+      .forEach(file => {
+        this.log('copy', file);
+        this.fs.copy(
+          this.templatePath(file),
+          this.destinationPath(path.basename(file).replace(/^_/, ''))
+        );
+      });
 
     this.fs.copyTpl(
       this.templatePath('_package.json'),
@@ -74,10 +68,14 @@ module.exports = class extends Generator {
 
   install() {
     this.yarnInstall();
-    this.config.save()
+    this.config.save();
   }
 
   end() {
-    this.log(`🍾  We're done, now you can start development by typing ${chalk.green('yarn start')}`);
+    this.log(
+      `🍾  We're done, now you can start development by typing ${chalk.green(
+        'yarn start'
+      )}`
+    );
   }
 };
