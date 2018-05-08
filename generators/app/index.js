@@ -24,7 +24,7 @@ module.exports = class extends Generator {
       {
         type: 'input',
         name: 'author',
-        message: 'Author?',
+        message: 'What is your name?',
         default: this.user.git.name
       }
     ];
