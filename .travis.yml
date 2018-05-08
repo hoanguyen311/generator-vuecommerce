@@ -4,3 +4,9 @@ node_js:
   - v8
   - v6
   - v4
+deploy:
+  provider: npm
+  email: $NPM_EMAIL
+  api_key: $NPM_API_TOKEN
+  on:
+    tags: true
